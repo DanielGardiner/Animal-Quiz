@@ -19,9 +19,6 @@ class QuestionsModel
         }
         curl_close($ch);
         $questionsObject = json_decode($questions);
-//        echo '<pre>';
-//        var_dump($questionsObject);
-//        echo '</pre>';
         return $questionsObject;
     }
 
@@ -35,7 +32,6 @@ class QuestionsModel
             unset($question->difficulty);
             unset($question->incorrect_answers);
         }
-//        var_dump($questions);
         return $questions;
     }
 }

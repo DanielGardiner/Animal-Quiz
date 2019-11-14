@@ -5,33 +5,104 @@
         <title>Animal Quiz</title>
         <style>
             body {
-                margin: 50px 0 0 0;
+                margin: 0;
                 padding: 0;
                 width: 100%;
                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
                 text-align: center;
                 color: #aaa;
                 font-size: 18px;
+                /*background: url("https://images.vexels.com/media/users/3/157149/raw/5ed9149356d9abecb4713a0dca4fa46b-jungle-background-design.jpg");*/
+                background: url("https://static.vecteezy.com/system/resources/previews/000/147/109/original/palmetto-leaves-background-vector.jpg");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .overlay {
+                background-color: rgba(116, 116, 116, 0.53);
+                height: 100%;
             }
 
             h1 {
-                color: #719e40;
+                color: #2c2c2c;
                 letter-spacing: -3px;
                 font-family: 'Lato', sans-serif;
                 font-size: 100px;
-                font-weight: 200;
-                margin-bottom: 0;
+                margin: 0;
+                font-weight: bold;
+
             }
+
+            form {
+                margin: 0 auto 50px auto;
+                width: 50%;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            h6 {
+                font-size: 1.1rem;
+                color: black;
+                margin: 20px 0;
+            }
+
+            label {
+                color: black;
+                /*margin: 5px 0;*/
+            }
+
+            input {
+                margin: 10px 0 5px 20px;
+            }
+
+            .answers {
+                display: flex;
+            }
+
+            .answer {
+                margin: 5px 0;
+            }
+
+            #submit {
+                margin-top: 20px;
+                width: 20%;
+                background-color: green;
+                font-size: 1.3rem;
+                color: white;
+                border-radius: 2px;
+            }
+
+            #submit:hover {
+                cursor: pointer;
+            }
+
+
+
+
         </style>
     </head>
     <body>
+    <div class="overlay">
         <h1>Animal Quiz</h1>
-        <form action="">
-            <label for=""></label>
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
-            <input type="checkbox">
+        <form action="submit">
+            <?php
+            $list = '';
+            foreach ($questions as $question) {
+                $list .= '<h6>' . $question->question . '</h6>';
+                $list .= '<div class="answers">';
+                foreach ($question->all_answers as $answer) {
+                    $list .= '<div class="answer"><label>' . $answer . '</label>'
+                    . '<input type="checkbox" name="'. $answer .'"></div>';
+                }
+                $list .= '</div>';
+            }
+            echo $list;
+            ?>
+            <input id="submit" type="submit">
         </form>
+    </div>
     </body>
 </html>

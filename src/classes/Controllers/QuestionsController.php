@@ -4,6 +4,9 @@
 namespace AnimalQuiz\Controllers;
 
 
+use Slim\Http\Request;
+use Slim\Http\Response;
+
 class QuestionsController
 {
     private $model;
@@ -20,11 +23,13 @@ class QuestionsController
         $this->view = $view;
     }
 
-    public function __invoke()
+    public function __invoke(Request $request, Response $response, $args)
     {
         $questions = $this->model->getQuestions();
         $formattedQuestions = $this->model->formatQuestions($questions);
-        $this->view->render($request, 'index.phtml', $formattedQuestions);
-
+//        echo '<pre>';
+//        var_dump($formattedQuestions);
+//        echo '</pre>';
+        $this->view->render($response, 'index.phtml', ['questions' => $formattedQuestions]);
     }
 }

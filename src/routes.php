@@ -8,5 +8,4 @@ return function (App $app) {
     $container = $app->getContainer();
 
     $app->get('/', 'QuestionsController');
-
 };
