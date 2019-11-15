@@ -13,8 +13,7 @@
                 text-align: center;
                 color: #aaa;
                 font-size: 18px;
-                /*background: url("https://images.vexels.com/media/users/3/157149/raw/5ed9149356d9abecb4713a0dca4fa46b-jungle-background-design.jpg");*/
-                background: url("https://static.vecteezy.com/system/resources/previews/000/147/109/original/palmetto-leaves-background-vector.jpg");
+                background: url("https://images.vexels.com/media/users/3/157149/raw/5ed9149356d9abecb4713a0dca4fa46b-jungle-background-design.jpg");
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -26,65 +25,22 @@
             }
 
             h1 {
-                color: #2c2c2c;
+                color: #dddddd;
                 letter-spacing: -3px;
                 font-family: 'Lato', sans-serif;
                 font-size: 100px;
                 margin: 0;
                 font-weight: bold;
-
+                text-shadow: 4px 5px #000000;
             }
 
             form {
-                margin: 0 auto 50px auto;
                 width: 50%;
-                text-align: left;
-                display: flex;
-                flex-direction: column;
-                padding: 20px;
+                margin: 0 auto;
             }
 
-            h6 {
-                font-size: 1.1rem;
-                color: black;
-                margin: 20px 0;
-            }
-
-            label {
-                color: black;
-                /*margin: 5px 0;*/
-            }
-
-            input {
-                margin: 10px 0 5px 20px;
-                transform: scale(2);
-            }
-
-            .answers {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .answer {
-                margin: 5px 0;
-                display: flex;
-            }
-
-            .answer>*{
-                width: 30%;
-            }
-
-            #submit {
-                margin-top: 20px;
-                width: 20%;
-                background-color: green;
-                font-size: 1.3rem;
-                color: white;
-                border-radius: 2px;
-            }
-
-            #submit:hover {
-                cursor: pointer;
+            .card {
+                color: #2c2c2c;
             }
         </style>
         <?php session_start(); ?>
@@ -95,21 +51,25 @@
         <form action="results">
             <?php
             $list = '';
+            $i = 1;
             foreach ($questions as $question) {
-                $list .= '<h6>' . $question->question . '</h6>';
-                $list .= '<div class="answers">';
-                $id = $question->id;
+                $list .= '<div class="card bg-light mb-3">
+                <div class="card-header">Question ' . $i++ . '</div>
+                <div class="card-body">
+                    <h5 class="card-title">'
+                    . $question->question . '</h5>
+                    <select name="'. $question->id . '" class="custom-select" size="4">';
+//                $id = ;
                 foreach ($question->all_answers as $answer) {
-                    $list .= '<div class="answer">
-                                 <div><label>' . $answer . '</label></div>'
-                              . '<div><input type="radio" name="' . $id . '" value="'. $answer .'"></div></div>';
+                    $list .= '<option name="' . $id . '" value="' . $answer . '">' . $answer . '</option>';
                 }
-                $list .= '</div>';
+            $list .= '</select></div></div>';
             }
             echo $list;
             ?>
-            <input id="submit" type="submit">
+            <input type="submit" class="btn btn-primary mb-4">
         </form>
     </div>
+
     </body>
 </html>

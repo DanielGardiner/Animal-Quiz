@@ -5,6 +5,7 @@ namespace AnimalQuiz\Controllers;
 
 
 use AnimalQuiz\ServiceWorkers\MarkAnswers;
+use AnimalQuiz\Validation\ValidateAnswers;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -25,10 +26,16 @@ class ResultsController
     {
         $userAnswers = $request->getQueryParams();
 
-        $questionsAndCorrectAnswers = $_SESSION['questions']->results;
+        $validate = ValidateAnswers::validateAnswers($userAnswers);
 
-        $markedAnswers = MarkAnswers::markAnswers($userAnswers, $questionsAndCorrectAnswers);
+        var_dump($validate);
 
-        $this->view->render($response, 'results.phtml', ['markedAnswers' => $markedAnswers]);
+//        if ($validate && isset($_SESSION['questions']->results)) {
+            $questionsAndCorrectAnswers = $_SESSION['questions']->results;
+            $markedAnswers = MarkAnswers::markAnswers($userAnswers, $questionsAndCorrectAnswers);
+            $this->view->render($response, 'results.phtml', ['markedAnswers' => $markedAnswers]);
+//        } else {
+//            return $response->withRedirect('/');
+//        }
     }
 }

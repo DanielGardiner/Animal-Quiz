@@ -68,7 +68,7 @@ class MarkAnswers
 
         $checkedAnswers = [];
 
-        for ($i = 0; $i <= count($questions); $i++) {
+        for ($i = 0; $i < count($questions); $i++) {
             $checkedAnswers[] = ['question' => $questions[$i],
                 'correctAnswer' => $correctAnswers[$i],
                 'userAnswer' => $userAnswers[$i],
