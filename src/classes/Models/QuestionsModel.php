@@ -24,9 +24,11 @@ class QuestionsModel
 
     public function formatQuestions(\stdClass $questions): array {
         $questions = $questions->results;
+        $i = 0;
         foreach ($questions as $question) {
             $question->all_answers = array_merge($question->incorrect_answers, [$question->correct_answer]);
             shuffle($question->incorrect_answers);
+            $question->id  = ++$i;
             unset($question->category);
             unset($question->type);
             unset($question->difficulty);

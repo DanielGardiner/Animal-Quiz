@@ -1,7 +1,7 @@
 <?php
 
-use AnimalQuiz\Controllers\QuestionsController;
 use AnimalQuiz\Factories\QuestionsControllerFactory;
+use AnimalQuiz\Factories\ResultsControllerFactory;
 use AnimalQuiz\Models\QuestionsModel;
 use Slim\App;
 
@@ -26,4 +26,6 @@ return function (App $app) {
     $container['QuestionsModel'] = new QuestionsModel();
 
     $container['QuestionsController'] = new QuestionsControllerFactory();
+
+    $container['ResultsController'] = new ResultsControllerFactory();
 };

@@ -92,24 +92,7 @@
     <body>
     <div class="overlay">
         <h1>Animal Quiz</h1>
-        <form action="results">
-            <?php
-            $list = '';
-            foreach ($questions as $question) {
-                $list .= '<h6>' . $question->question . '</h6>';
-                $list .= '<div class="answers">';
-                $id = $question->id;
-                foreach ($question->all_answers as $answer) {
-                    $list .= '<div class="answer">
-                                 <div><label>' . $answer . '</label></div>'
-                              . '<div><input type="radio" name="' . $id . '" value="'. $answer .'"></div></div>';
-                }
-                $list .= '</div>';
-            }
-            echo $list;
-            ?>
-            <input id="submit" type="submit">
-        </form>
+        <?php var_dump($markedAnswers); ?>
     </div>
     </body>
 </html>
