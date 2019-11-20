@@ -1,6 +1,6 @@
 # Animal Quiz Application
 
-This application grabs and displays six random animal-based questions with multiple choice answers from the Open Trivia DB API. The user can select and submits answers which will be checked against the correct answers and results will be displayed on a seperate page. 
+This application retrieves and displays random animal-based questions from the Open Trivia DB API. Users can select from multiple choice answers which will be checked and results displayed on a seperate page. 
 
 ## Screenshots
 
