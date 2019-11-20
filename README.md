@@ -4,11 +4,11 @@ This application grabs and displays six random animal-based questions with multi
 
 ## Screenshots
 
-Questions page
+**Questions page**
 
 ![alt text](https://raw.githubusercontent.com/DanielGardiner/Animal-Quiz/master/media/img_questions.png)
 
-Results page
+**Results page**
 
 ![alt text](https://raw.githubusercontent.com/DanielGardiner/Animal-Quiz/master/media/img_results.png)
 
