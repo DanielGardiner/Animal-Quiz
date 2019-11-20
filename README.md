@@ -4,11 +4,11 @@ This application grabs six random questions with multiple choice answers from th
 
 ## Install the Application
 
-Clone the repository onto your machine 
+Clone the repository onto your machine: 
 ```
 git clone git@github.com:DanielGardiner/Animal-Quiz.git
 ```
-Once cloned, you must install the slim components by running:
+Once cloned, install the slim components by running:
 ```
 composer install
 ```
