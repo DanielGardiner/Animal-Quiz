@@ -4,9 +4,9 @@ This application grabs and displays six random animal-based questions with multi
 
 ## Screenshots
 
-![alt text](https://raw.githubusercontent.com/DanielGardiner/Animal-Quiz/media/img_questions.png)
+![alt text](https://raw.githubusercontent.com/DanielGardiner/Animal-Quiz/master/media/img_questions.png)
 
-![alt text](https://raw.githubusercontent.com/DanielGardiner/Animal-Quiz/media/img_results.png)
+![alt text](https://raw.githubusercontent.com/DanielGardiner/Animal-Quiz/master/media/img_results.png)
 
 ## Install the Application
 
