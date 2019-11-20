@@ -1,6 +1,16 @@
 # Animal Quiz Application
 
-This application grabs six random questions with multiple choice answers from the X API and displays them, the user can select and submits answers. The user supplied answers are checked and results are displayed on a seperate page. 
+This application grabs and displays six random animal-based questions with multiple choice answers from the Open Trivia DB API. The user can select and submits answers which will be checked against the correct answers and results will be displayed on a seperate page. 
+
+## Screenshots
+
+**Questions page**
+
+![alt text](https://raw.githubusercontent.com/DanielGardiner/Animal-Quiz/master/media/img_questions.png)
+
+**Results page**
+
+![alt text](https://raw.githubusercontent.com/DanielGardiner/Animal-Quiz/master/media/img_results.png)
 
 ## Install the Application
 
