@@ -28,14 +28,12 @@ class ResultsController
 
         $validate = ValidateAnswers::validateAnswers($userAnswers);
 
-        var_dump($validate);
-
-//        if ($validate && isset($_SESSION['questions']->results)) {
+        if ($validate && isset($_SESSION['questions']->results)) {
             $questionsAndCorrectAnswers = $_SESSION['questions']->results;
             $markedAnswers = MarkAnswers::markAnswers($userAnswers, $questionsAndCorrectAnswers);
             $this->view->render($response, 'results.phtml', ['markedAnswers' => $markedAnswers]);
-//        } else {
-//            return $response->withRedirect('/');
-//        }
+        } else {
+            return $response->withRedirect('/');
+        }
     }
 }

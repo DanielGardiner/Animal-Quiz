@@ -15,6 +15,4 @@ class QuestionsControllerFactory
 
         return new QuestionsController($model, $view);
     }
-
-
 }

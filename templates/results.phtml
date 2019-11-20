@@ -5,17 +5,71 @@
         <meta charset="utf-8"/>
         <title>Animal Quiz</title>
         <style>
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                text-align: center;
+                color: #aaa;
+                font-size: 18px;
+                background: url("https://images.vexels.com/media/users/3/157149/raw/5ed9149356d9abecb4713a0dca4fa46b-jungle-background-design.jpg");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
 
+            .overlay {
+                background-color: rgba(116, 116, 116, 0.53);
+                height: 100%;
+            }
+
+            h1 {
+                color: #dddddd;
+                letter-spacing: -3px;
+                font-family: 'Lato', sans-serif;
+                font-size: 100px;
+                margin: 0;
+                font-weight: bold;
+                text-shadow: 4px 5px #000000;
+            }
+
+            .card {
+                width: 50%;
+                margin: 0 auto;
+                color: #2c2c2c;
+            }
         </style>
-        <?php session_start(); ?>
     </head>
     <body>
     <div class="overlay">
+        <div class="overlay">
         <h1>Animal Quiz</h1>
-        <?php
-        echo '<pre>';
-        var_dump($markedAnswers);
-        echo '</pre>'; ?>
+            <?php
+            $list = '';
+            $i = 1;
+            foreach ($markedAnswers as $markedAnswer) {
+                $list .= '<div class="card bg-light mb-3">
+                <div class="card-header">Question ' . $i++ . '</div>
+                <div class="card-body">
+                    <h5 class="card-title">'
+                    . $markedAnswer['question']
+                    . '</h5>';
+                if ($markedAnswer['result']) {
+                    $list .= '<div class="alert alert-success" role="alert"><p>You answered: '
+                             . $markedAnswer['userAnswer']
+                             . '</p><p>Correct</p></div>';
+                } else {
+                    $list .= '<div class="alert alert-danger" role="alert"><p>You answered: '
+                             . $markedAnswer['userAnswer']
+                             . '</p><p> Incorrect</p><p>The correct answer was: '
+                             . $markedAnswer['correctAnswer']
+                             . '</p></div>';
+                }
+            $list .= '</div></div>';
+            };
+            echo $list;
+            ?>
     </div>
     </body>
 </html>
