@@ -1,6 +1,6 @@
 # Animal Quiz Application
 
-This was a solo project to produce an animal-based quiz game. Random animal-related multiple choice questions are retrieved from the Open Trivia DB API, users can select from multiple choice answers which are checked and results displayed on a separate page. I built this application using the Slim framework for PHP, applying the Model View Controller (MVC) design pattern. I used PHPUnit to perform unit testing.
+This was a solo project to produce an animal-based quiz game. Random animal-related multiple choice questions are retrieved from the Open Trivia DB API, users can select from multiple choice answers which are checked and results displayed on a separate page. I built this application using the Slim framework within PHP, applying the Model View Controller (MVC) design pattern. I used PHPUnit to perform unit testing.
 
 ## Screenshots
 
